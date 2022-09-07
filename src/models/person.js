@@ -1,20 +1,20 @@
 const db = require("../database/config");
-const { DataTypes } = require('sequelize');
+const {DataTypes} = require('sequelize');
 
-const keyword = db.define( "keyword", {
-    keyword_id: {
+const person = db.define("person", {
+    person_id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
         autoIncrement: true
     },
-    keyword_name: {
+    person_name: {
         type: DataTypes.STRING
     }
 },
 {
-    tableName: "keyword",
+    tableName: 'person',
     createdAt: false,
     updatedAt: false
 });
 
-module.exports = keyword;
+module.exports = person

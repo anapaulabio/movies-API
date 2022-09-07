@@ -12,7 +12,7 @@ const language_role = db.define("language_role", {
     }
 },
 {
-    nameTable: "language_role",
+    tableName: "language_role",
     createdAt: false,
     updatedAt: false
 });

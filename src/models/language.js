@@ -17,7 +17,7 @@ const language = db.define(
     },
   },
   {
-    nameTable: "language",
+    tableName: "language",
     createdAt: false,
     updatedAt: false,
   }
