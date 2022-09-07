@@ -1,4 +1,3 @@
-const sequelize = require('sequelize');
 const Gender = require('../models/gender');
 
 const genderController = {
