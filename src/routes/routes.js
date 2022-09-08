@@ -13,16 +13,27 @@ const companyController = require('../controllers/productionCompanyController');
 
 const Routes = express.Router();
 
-Routes.get("/country", countryController.listarCountry);
-Routes.get("/gender", genderController.listarGender);
-Routes.get("/departament", departmentController.listarDepartment);
-Routes.get('/genre', genreController.listarGenre);
-Routes.get('/keyword', keywordController.listarKeyword);
-Routes.get('/language', languageController.listarLanguage);
-Routes.get('/role', languageRoleController.listarRole);
-Routes.get('/movie', movieController.listarMovie);
-Routes.get('/person', personController.listarPerson);
-Routes.get('/company', companyController.listarCompany);
+Routes.get("/country", countryController.listCountry);
+Routes.post("/new-country", countryController.registerCountry);
+
+Routes.get("/departament", departmentController.listDepartment);
+Routes.post("/new-department", departmentController.registerDepartment);
+
+Routes.get("/gender", genderController.listGender);
+
+Routes.get('/genre', genreController.listGenre);
+
+Routes.get('/keyword', keywordController.listKeyword);
+
+Routes.get('/language', languageController.listLanguage);
+
+Routes.get('/role', languageRoleController.listRole);
+
+Routes.get('/movie', movieController.listMovie);
+
+Routes.get('/person', personController.listPerson);
+
+Routes.get('/company', companyController.listCompany);
 
 module.exports = Routes
 

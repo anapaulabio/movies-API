@@ -1,7 +1,7 @@
 const languageRole = require('../models/language_role');
 
 const languageRoleController = {
-    listarRole: async (req, res) => {
+    listRole: async (req, res) => {
         const roles = await languageRole.findAll();
         res.json(roles)
     }
