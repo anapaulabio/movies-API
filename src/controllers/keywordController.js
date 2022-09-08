@@ -4,6 +4,14 @@ const keywordController = {
     listKeyword: async (req,res) => {
         const keyword = await Keyword.findAll()
         res.json(keyword)
+    },
+
+    registerKeyword: async (req, res) => {
+        const {keyword_name} = req.body;
+        const keyword = await Keyword.create({
+            keyword_name
+        })
+        res.json(keyword)
     }
 };
 

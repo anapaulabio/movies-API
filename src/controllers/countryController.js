@@ -7,9 +7,9 @@ const countryController = {
     },
 
     registerCountry: async (req, res) => {
-        const {contry_iso_code, country_name} = req.body;
+        const {country_iso_code, country_name} = req.body;
         const country = await Country.create({
-            contry_iso_code,
+            country_iso_code,
             country_name
         });
         res.json(country);

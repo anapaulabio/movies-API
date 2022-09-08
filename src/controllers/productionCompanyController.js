@@ -7,6 +7,14 @@ const companyController = {
             include: Movie
         });
         res.json(company);
+    },
+
+    registerCompany: async (req, res) => {
+        const {company_name} = req.body;
+        const company = await Company.create({
+            company_name
+        })
+        res.json(company);
     }
 };
 

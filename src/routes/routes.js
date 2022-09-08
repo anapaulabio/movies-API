@@ -20,20 +20,28 @@ Routes.get("/departament", departmentController.listDepartment);
 Routes.post("/new-department", departmentController.registerDepartment);
 
 Routes.get("/gender", genderController.listGender);
+Routes.post("/new-gender", genderController.registerGender);
 
 Routes.get('/genre', genreController.listGenre);
+Routes.post("/new-genre", genreController.registerGenre);
 
 Routes.get('/keyword', keywordController.listKeyword);
+Routes.post("/new-keyword", keywordController.registerKeyword);
 
 Routes.get('/language', languageController.listLanguage);
+Routes.post("/new-language", languageController.registerLanguage);
 
 Routes.get('/role', languageRoleController.listRole);
+Routes.post("/new-role", languageRoleController.registerRole);
 
 Routes.get('/movie', movieController.listMovie);
+Routes.post("/new-movie", movieController.registerMovie);
 
 Routes.get('/person', personController.listPerson);
+Routes.post("/new-person", personController.registerPerson);
 
 Routes.get('/company', companyController.listCompany);
+Routes.post("/new-company", companyController.registerCompany);
 
 module.exports = Routes
 

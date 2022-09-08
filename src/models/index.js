@@ -49,5 +49,6 @@ module.exports = {
     Movie,
     productionCompany,
     Person,
-    Gender
+    Gender,
+    MovieCast
 }
