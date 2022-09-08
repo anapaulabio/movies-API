@@ -27,22 +27,24 @@ const movieController = {
       gender
     } = req.body;
     const movie = await Movie.create({
-        title,
-        budget,
-        homepage,
-        overview,
-        popularity,
-        release_date,
-        revenue,
-        runtime,
-        movie_status,
-        tagline,
-        vote_average,
-        vote_count,
-        gender
-    })
-        res.json(movie);
+      title,
+      budget,
+      homepage,
+      overview,
+      popularity,
+      release_date,
+      revenue,
+      runtime,
+      movie_status,
+      tagline,
+      vote_average,
+      vote_count,
+      gender
+    });
+    res.json(movie);
   },
+
+  
 };
 
 module.exports = movieController;

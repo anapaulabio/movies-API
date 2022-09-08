@@ -1,8 +1,8 @@
 const express = require('express');
 
 const countryController = require('../controllers/countryController');
-const genderController = require('../controllers/genderController');
 const departmentController = require('../controllers/departmentController');
+const genderController = require('../controllers/genderController');
 const genreController = require('../controllers/genreController');
 const keywordController = require('../controllers/keywordController');
 const languageController = require('../controllers/languageController');
@@ -15,15 +15,23 @@ const Routes = express.Router();
 
 Routes.get("/country", countryController.listCountry);
 Routes.post("/new-country", countryController.registerCountry);
+Routes.put("/country/:country_id/update", countryController.updateCountry);
+Routes.delete("/country/:country_id/delete", countryController.deleteCountry);
 
-Routes.get("/departament", departmentController.listDepartment);
+Routes.get("/department", departmentController.listDepartment);
 Routes.post("/new-department", departmentController.registerDepartment);
+Routes.put("/department/:department_id/update", departmentController.updateDepartment);
+Routes.delete("/department/:department_id/delete", departmentController.deleteDepartment);
 
 Routes.get("/gender", genderController.listGender);
 Routes.post("/new-gender", genderController.registerGender);
+Routes.put("/gender/:gender_id/update", genderController.updateGender);
+Routes.delete("/gender/:gender_id/delete", genderController.deleteGender);
 
 Routes.get('/genre', genreController.listGenre);
 Routes.post("/new-genre", genreController.registerGenre);
+Routes.put("/genre/:genre_id/update", genreController.updateGenre);
+Routes.delete("/genre/:genre_id/delete", genreController.deleteGenre);
 
 Routes.get('/keyword', keywordController.listKeyword);
 Routes.post("/new-keyword", keywordController.registerKeyword);
