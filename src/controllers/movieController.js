@@ -24,7 +24,7 @@ const movieController = {
       tagline,
       vote_average,
       vote_count,
-      gender
+      gender,
     } = req.body;
     const movie = await Movie.create({
       title,
@@ -39,12 +39,62 @@ const movieController = {
       tagline,
       vote_average,
       vote_count,
-      gender
+      gender,
     });
     res.json(movie);
   },
 
-  
+  updateMovie: async (req, res) => {
+    const { movie_id } = req.params;
+    const {
+      title,
+      budget,
+      homepage,
+      overview,
+      popularity,
+      release_date,
+      revenue,
+      runtime,
+      movie_status,
+      tagline,
+      vote_average,
+      vote_count,
+      gender,
+    } = req.body;
+    const movie = await Movie.update(
+      {
+        title,
+        budget,
+        homepage,
+        overview,
+        popularity,
+        release_date,
+        revenue,
+        runtime,
+        movie_status,
+        tagline,
+        vote_average,
+        vote_count,
+        gender,
+      },
+      {
+        where: {
+          movie_id,
+        },
+      }
+    );
+    res.json("Movie updated");
+  },
+
+  deleteMovie: async (req, res) => {
+    const { movie_id } = req.params;
+    await Movie.destroy({
+      where: {
+        movie_id
+      }
+    });
+    res.json("Movie deleted")
+  }
 };
 
 module.exports = movieController;

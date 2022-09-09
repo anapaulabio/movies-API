@@ -35,21 +35,33 @@ Routes.delete("/genre/:genre_id/delete", genreController.deleteGenre);
 
 Routes.get('/keyword', keywordController.listKeyword);
 Routes.post("/new-keyword", keywordController.registerKeyword);
+Routes.put('/keyword/:keyword_id/update', keywordController.updateKeyword);
+Routes.delete('/keyword/:keyword_id/delete', keywordController.deleteKeyword);
 
 Routes.get('/language', languageController.listLanguage);
-Routes.post("/new-language", languageController.registerLanguage);
+Routes.post('/new-language', languageController.registerLanguage);
+Routes.put('/language/:language_id/update', languageController.updateLanguage);
+Routes.delete('/language/:language_id/delete', languageController.deleteLanguage);
 
 Routes.get('/role', languageRoleController.listRole);
-Routes.post("/new-role", languageRoleController.registerRole);
+Routes.post('/new-role', languageRoleController.registerRole);
+Routes.put('/role/:role_id/update', languageRoleController.updateRole);
+Routes.delete('/role/:role_id/delete', languageRoleController.deleteRole);
 
 Routes.get('/movie', movieController.listMovie);
-Routes.post("/new-movie", movieController.registerMovie);
+Routes.post('/new-movie', movieController.registerMovie);
+Routes.put('/movie/:movie_id/update', movieController.updateMovie);
+Routes.delete('/movie/:movie_id/delete', movieController.deleteMovie);
 
 Routes.get('/person', personController.listPerson);
-Routes.post("/new-person", personController.registerPerson);
+Routes.post('/new-person', personController.registerPerson);
+Routes.put('/person/:person_id/update', personController.updatePerson);
+Routes.delete('/person/:person_id/delete', personController.deletePerson);
 
 Routes.get('/company', companyController.listCompany);
-Routes.post("/new-company", companyController.registerCompany);
+Routes.post('/new-company', companyController.registerCompany);
+Routes.put('/company/:company_id/update', companyController.updateCompany);
+Routes.delete('/company/:company_id/delete', companyController.deleteCompany);
 
 module.exports = Routes
 

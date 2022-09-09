@@ -13,6 +13,30 @@ const languageController = {
             language_name
         })
         res.json(language)
+    },
+
+    updateLanguage: async (req, res) => {
+        const { language_id } = req.params;
+        const language = Language.update({
+            language_code,
+            language_name
+        },
+        {
+            where: {
+                language_id
+            }
+        })
+        res.json("Language updated");       
+    },
+
+    deleteLanguage: async (req, res) => {
+        const { language_id } = req.params;
+        await Language.destroy({
+            where: {
+                language_id
+            }
+        });
+        res.json("Language deleted");
     }
 };
 
