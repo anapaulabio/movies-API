@@ -3,9 +3,7 @@ const Person = require("../models/person");
 
 const personController = {
   listPerson: async (req, res) => {
-    const person = await Person.findAll({
-      include: Movie,
-    });
+    const person = await Person.findAll();
     res.json(person);
   },
 

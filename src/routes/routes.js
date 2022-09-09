@@ -11,7 +11,7 @@ const movieController = require('../controllers/movieController');
 const personController = require('../controllers/personController');
 const companyController = require('../controllers/productionCompanyController');
 
-const Routes = express.Router();
+const Routes = express.Router(); 
 
 Routes.get("/country", countryController.listCountry);
 Routes.post("/new-country", countryController.registerCountry);
