@@ -1,4 +1,5 @@
-const Gender = require("../models/gender");
+
+const { Gender, MovieCast } = require("../models");
 
 const genderController = {
   listGender: async (req, res) => {
@@ -6,18 +7,25 @@ const genderController = {
     res.json(gender);
   },
 
+  listOne: async (req, res) => {
+    const { id } = req.params;
+    const oneGender = await Gender.findByPk(id)
+
+    res.status(200).json(oneGender);
+  },
+
   registerGender: async (req, res) => {
     const { gender } = req.body;
-    const genderC = await Gender.create({
+    const newGender = await Gender.reate({
       gender,
     });
-    res.json(genderC);
+    res.json(newGender);
   },
 
   updateGender: async (req, res) => {
     const { gender_id } = req.params;
     const { gender } = req.body;
-    const genderC = await Gender.update(
+    const upGender = await Gender.update(
       {
         gender,
       },
@@ -38,6 +46,15 @@ const genderController = {
         }
     });
     res.json("Gender deleted");
+  },
+
+  showTheMovieCast: async (req, res) => {
+    const result = await Gender.findAll({
+      include: {
+         model: MovieCast
+      }
+    })
+    res.json(result)
   }
 };
 

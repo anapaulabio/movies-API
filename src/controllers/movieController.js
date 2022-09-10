@@ -10,6 +10,13 @@ const movieController = {
     res.json(movie);
   },
 
+  listOne: async (req, res) => {
+    const { id } = req.params;
+    const oneMovie = await Movie.findByPk(id);
+
+    res.status(200).json(oneMovie);
+  },
+
   registerMovie: async (req, res) => {
     const {
       title,

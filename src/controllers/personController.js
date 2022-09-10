@@ -1,5 +1,5 @@
-const { Movie, Gender } = require("../models");
-const Person = require("../models/person");
+const { Person } = require("../models");
+
 
 const personController = {
   listPerson: async (req, res) => {
@@ -7,6 +7,22 @@ const personController = {
     res.json(person);
   },
 
+  listOne: async (req, res) => {
+    const { id } = req.params;
+    const onePerson = await Person.findByPk(id);
+
+    res.status(200).json(onePerson);
+  },
+
+  showTheMovieCast: async (req, res) => {
+    const result = await Person.findAll({
+      include: {
+         model: MovieCast
+      }
+    })
+    res.json(result)
+  }, 
+  
   registerPerson: async (req, res) => {
     const { person_name } = req.body;
     const person = await Person.create({

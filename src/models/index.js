@@ -5,45 +5,21 @@ const Gender = require('./gender');
 const Company = require('./movieCompany');
 const productionCompany = require('./production_company')
 
-Movie.belongsToMany(Person, {
-    foreignKey: 'movie_id',
-    through: MovieCast
-});
-
-Person.belongsToMany(Movie, {
-    foreignKey: 'person_id',
-    through: MovieCast
-});
-
-Gender.belongsToMany(Movie, {
+MovieCast.belongsTo(Gender, {
     foreignKey: 'gender_id',
-    through: MovieCast
 });
 
-Movie.belongsToMany(Gender, {
-    foreignKey: 'movie_id',
-    through: MovieCast
-});
-
-Person.belongsToMany(Gender, {
+MovieCast.belongsTo(Person, {
     foreignKey: 'person_id',
-    through: MovieCast
 });
 
-Gender.belongsToMany(Person, {
+Gender.hasMany(MovieCast, {
     foreignKey: 'gender_id',
-    through: MovieCast
 });
 
-Movie.belongsToMany(productionCompany, {
-    foreignKey: "movie_id",
-    through: Company
-});
-
-productionCompany.belongsToMany(Movie, {
-    foreignKey: "company_id",
-    through: Company
-});
+MovieCast.belongsTo(Movie, {
+    foreignKey: 'movie_id',
+})
 
 module.exports = {
     Movie,

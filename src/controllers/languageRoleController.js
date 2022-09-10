@@ -6,6 +6,13 @@ const languageRoleController = {
     res.json(roles);
   },
 
+  listOne: async (req, res) => {
+    const { id } = req.params;
+    const oneRole = await languageRole.findByPk(id);
+
+    res.status(200).json(oneRole);
+  },
+
   registerRole: async (req, res) => {
     const { language_role } = req.body;
     const role = await languageRole.create({

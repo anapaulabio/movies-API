@@ -9,6 +9,13 @@ const companyController = {
     res.json(company);
   },
 
+  listOne: async (req, res) => {
+    const { id } = req.params;
+    const oneCompany = await Company.findByPk(id);
+
+    res.status(200).json(oneCompany);
+  },
+
   registerCompany: async (req, res) => {
     const { company_name } = req.body;
     const company = await Company.create({

@@ -5,6 +5,13 @@ const departmentController = {
     const department = await Department.findAll();
     res.json(department);
   },
+  
+  listOne: async (req, res) => {
+    const { id } = req.params;
+    const oneDepartment = await Department.findByPk(id)
+
+    res.status(200).json(oneDepartment);
+  },
 
   registerDepartment: async (req, res) => {
     const { department_name } = req.body;
