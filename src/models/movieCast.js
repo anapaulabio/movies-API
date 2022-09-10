@@ -39,4 +39,6 @@ const movieCast = db.define("movieCast", {
     updatedAt: false
 });
 
+movieCast.removeAttribute("id");
+
 module.exports = movieCast;

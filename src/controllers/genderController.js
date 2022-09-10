@@ -1,4 +1,3 @@
-
 const { Gender, MovieCast } = require("../models");
 
 const genderController = {
@@ -9,7 +8,7 @@ const genderController = {
 
   listOne: async (req, res) => {
     const { id } = req.params;
-    const oneGender = await Gender.findByPk(id)
+    const oneGender = await Gender.findByPk(id);
 
     res.status(200).json(oneGender);
   },
@@ -41,21 +40,26 @@ const genderController = {
   deleteGender: async (req, res) => {
     const { gender_id } = req.params;
     await Gender.destroy({
-        where: {
-            gender_id
-        }
+      where: {
+        gender_id,
+      },
     });
     res.json("Gender deleted");
   },
 
   showTheMovieCast: async (req, res) => {
-    const result = await Gender.findAll({
-      include: {
-         model: MovieCast
-      }
-    })
-    res.json(result)
-  }
+    try {
+      const result = await Gender.findAll({
+        include: {
+          model: MovieCast,
+          required: true
+        },
+      });
+      res.json(result);
+    } catch (error) {
+      console.error(error);
+    }
+  },
 };
 
 module.exports = genderController;

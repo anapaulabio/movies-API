@@ -10,6 +10,7 @@ const languageRoleController = require('../controllers/languageRoleController');
 const movieController = require('../controllers/movieController');
 const personController = require('../controllers/personController');
 const companyController = require('../controllers/productionCompanyController');
+const movieCastController = require('../controllers/movieCastController');
 
 const Routes = express.Router(); 
 
@@ -26,8 +27,8 @@ Routes.put("/department/:department_id/update", departmentController.updateDepar
 Routes.delete("/department/:department_id/delete", departmentController.deleteDepartment);
 
 Routes.get("/gender", genderController.listGender);
+Routes.get("/gender/movie-cast", genderController.showTheMovieCast);
 Routes.get("/gender/:id", genderController.listOne);
-//Routes.get("/gender/movie_cast", genderController.showTheMovieCast);
 Routes.post("/new-gender", genderController.registerGender);
 Routes.put("/gender/:gender_id/update", genderController.updateGender);
 Routes.delete("/gender/:gender_id/delete", genderController.deleteGender);
@@ -63,17 +64,19 @@ Routes.put("/movie/:movie_id/update", movieController.updateMovie);
 Routes.delete("/movie/:movie_id/delete", movieController.deleteMovie);
 
 Routes.get("/person", personController.listPerson);
+Routes.get("/person/movie-cast", personController.showTheMovieCast);
 Routes.get("/person/:id", personController.listOne);
-//Routes.get("/person/movie_cast", personController.showTheMovieCast);
 Routes.post("/new-person", personController.registerPerson);
 Routes.put("/person/:person_id/update", personController.updatePerson);
 Routes.delete("/person/:person_id/delete", personController.deletePerson);
 
 Routes.get("/company", companyController.listCompany);
 Routes.get("/company/:id", companyController.listOne);
-Routes.post('/new-company', companyController.registerCompany);
+Routes.post('/new-company', companyController.registerCompany); 
 Routes.put('/company/:company_id/update', companyController.updateCompany);
 Routes.delete('/company/:company_id/delete', companyController.deleteCompany);
+
+Routes.get("/moviecast/person", movieCastController.showPerson);
 
 module.exports = Routes
 

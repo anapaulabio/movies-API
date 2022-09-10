@@ -13,6 +13,10 @@ MovieCast.belongsTo(Person, {
     foreignKey: 'person_id',
 });
 
+Person.hasMany(MovieCast, {
+    foreignKey: 'person_id',
+})
+
 Gender.hasMany(MovieCast, {
     foreignKey: 'gender_id',
 });
