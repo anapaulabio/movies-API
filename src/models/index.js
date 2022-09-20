@@ -2,8 +2,13 @@ const Movie = require('./movie');
 const MovieCast = require('./movieCast');
 const Person = require('./person');
 const Gender = require('./gender');
+const Genre = require('./genre');
 const Company = require('./movieCompany');
 const productionCompany = require('./production_company')
+const Department = require('./department');
+const Keyword = require('./keyword');
+const Language = require('./language');
+const LanguageRole = require('./language_role');
 
 MovieCast.belongsTo(Gender, {
     foreignKey: 'gender_id',
@@ -30,5 +35,11 @@ module.exports = {
     productionCompany,
     Person,
     Gender,
-    MovieCast
+    Company,
+    MovieCast,
+    Department,
+    Genre,
+    Keyword,
+    Language,
+    LanguageRole
 }
