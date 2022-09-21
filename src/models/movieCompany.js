@@ -1,4 +1,4 @@
-const db = require('../database/config');
+const {db} = require('../database/config');
 const {DataTypes} = require('sequelize');
 const Movie = require('./movie');
 const production_company = require('./production_company');

@@ -1,4 +1,4 @@
-const db = require('../database/config');
+const {db }= require('../database/config');
 const {DataTypes} = require ('sequelize');
 
 const production_company = db.define('production_company', {
@@ -17,4 +17,4 @@ const production_company = db.define('production_company', {
     updatedAt: false
 });
 
-module.exports = production_company;
+module.exports = production_company; 
