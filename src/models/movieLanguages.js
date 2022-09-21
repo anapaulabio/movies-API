@@ -1,6 +1,8 @@
 const { db } = require('../database/config');
 const { DataTypes } = require('sequelize');
-const { Movie, Language, LanguageRole } = require('./index');
+const Movie= require('./movie');
+const Language= require('./language');
+const LanguageRole = require('./language_role');
 
 const movieLanguage = db.define("movieLanguage", {
     movie_id: {
@@ -25,3 +27,5 @@ const movieLanguage = db.define("movieLanguage", {
         }
     }
 })
+
+module.exports = movieLanguage;
