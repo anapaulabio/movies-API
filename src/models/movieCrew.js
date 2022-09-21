@@ -1,6 +1,8 @@
 const {db} = require('../database/config')
 const { DataTypes } = require('sequelize')
-const {Movie, Person, Department} = require('./index')
+const Movie = require('./movie')
+const Person = require('./person');
+const Department = require('./department');
 
 const movieCrew = db.define(
     "movieCrew", {
