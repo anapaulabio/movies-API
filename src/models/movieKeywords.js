@@ -1,6 +1,7 @@
 const { db } = require('../database/config');
 const { DataTypes } = require('sequelize');
-const { Movie, Keyword } = require('./index');
+const Movie = require('./movie');
+const Keyword = require('./keyword');
 
 const movieKeyword = db.define("movieKeyword", {
     movie_id: {
