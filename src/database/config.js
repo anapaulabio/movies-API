@@ -28,4 +28,4 @@ Object.assign(db, {
     hasConection
 });
 
-module.exports = db;
+module.exports = { db, hasConection };
