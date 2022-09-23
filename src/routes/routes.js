@@ -13,6 +13,9 @@ const companyController = require('../controllers/productionCompanyController');
 const movieCastController = require('../controllers/movieCastController');
 const movieCompanyController = require('../controllers/movieCompanyController');
 const movieCrewController = require('../controllers/movieCrewController');
+const movieGenresController = require('../controllers/movieGenreController');
+const movieLanguageController = require('../controllers/movieLanguageController');
+const movieKeywordController = require('../controllers/movieKeywordController');
 
 const Routes = express.Router(); 
 
@@ -79,7 +82,9 @@ Routes.delete('/company/:company_id', companyController.deleteCompany);
 Routes.get("/moviecast", movieCastController.listCast);
 Routes.get("/moviecompany", movieCompanyController.listMovieCompany);
 Routes.get("/movieCrew", movieCrewController.listMovieCrew);
-
+Routes.get("/moviegenre", movieGenresController.listMovieGenre);
+Routes.get("/movielanguage", movieLanguageController.listMovieLanguage);
+Routes.get("/moviekeyword", movieKeywordController.listMovieKeyword);
 
 module.exports = Routes
 
