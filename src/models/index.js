@@ -11,6 +11,9 @@ const Language = require('./language');
 const LanguageRole = require('./language_role');
 const MovieCompany = require('./movieCompany');
 const MovieCrew = require('./movieCrew');
+const movieGenres = require('./movieGenres');
+const movieKeywords = require('./movieKeywords');
+const movieLanguages = require('./movieLanguages');
 
 
 MovieCast.belongsTo(Gender, {
@@ -43,7 +46,35 @@ MovieCrew.belongsTo(Person, {
 
 MovieCrew.belongsTo(Department, {
     foreignKey: 'department_id',
-})
+});
+
+movieGenres.belongsTo(Movie, {
+    foreignKey: 'movie_id',
+});
+
+movieGenres.belongsTo(Genre, {
+    foreignKey: 'genre_id',
+});
+
+movieKeywords.belongsTo(Movie, {
+    foreignKey: 'movie_id',
+});
+
+movieKeywords.belongsTo(Keyword, {
+    foreignKey: 'keyword_id',
+});
+
+movieLanguages.belongsTo(Movie, {
+    foreignKey: 'movie_id',
+});
+
+movieLanguages.belongsTo(Language, {
+    foreignKey: 'language_id',
+});
+
+movieLanguages.belongsTo(LanguageRole, {
+    foreignKey: 'language_role_id',
+});
 
 
 module.exports = {
@@ -59,5 +90,8 @@ module.exports = {
     Language,
     LanguageRole,
     MovieCompany,
-    MovieCrew
+    MovieCrew,
+    movieGenres,
+    movieKeywords,
+    movieLanguages
 }
